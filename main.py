@@ -98,3 +98,19 @@ class ShoppingList:
             if product not in shop_list1:
                 shop_list1.append(product)
         return ShoppingList(shop_list1)
+
+
+
+class DietaryRecipe(Recipe):
+    def __init__(self, title, diet_type, ingredients=None):
+        if ingredients is None:
+            ingredients = []
+        self.diet_type = diet_type
+        super().__init__(title, ingredients)
+
+    def scale(self, ratio: float):
+        new_recipe = super().scale(ratio)
+        return DietaryRecipe(new_recipe.title, self.diet_type, new_recipe.ingredients)
+
+    def __str__(self):
+        return f"[{self.diet_type}] {super().__str__()}"
