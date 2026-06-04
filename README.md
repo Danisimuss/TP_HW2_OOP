@@ -5,8 +5,8 @@
 # Инструкция по запуску проекта и тестов
 ## Необходимо запустить этот код в Bash консоли.
 ```
-git clone <ваш-репозиторий>
-cd <папка>
+git clone https://github.com/Danisimuss/TP_HW2_OOP
+cd <путь к корневой папке проекта>
 pip install -r requirements.txt
 pytest
 ```
