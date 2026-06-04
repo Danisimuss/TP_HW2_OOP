@@ -24,7 +24,7 @@ class Ingredient:
         return f"Ingredient('{self.name}', {self.quantity}, '{self.unit}')"
 
     def __eq__(self, other):
-        if not(isinstance(Ingredient, other)):
+        if not isinstance(other, Ingredient): 
             return False
         return self.name == other.name and self.unit == other.unit
 
