@@ -56,8 +56,7 @@ class Recipe:
             new_ingredients.append(new_ingred)
         return Recipe(self.title, new_ingredients)
     def __len__(self):
-        return len(self.ingredients)
-
+        return len({(ing.name, ing.unit) for ing in self.ingredients})
     def __str__(self):
         return f"Название блюда: {self.title}, список ингредиентов: {' '.join([str(i) for i in self.ingredients])}"
 
