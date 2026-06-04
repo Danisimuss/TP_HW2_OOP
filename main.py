@@ -91,13 +91,12 @@ class ShoppingList:
         list_ingredients = sorted(list_ingredients, key=lambda x: x.name)
         return list_ingredients
 
-    def __add__(self, other: ShoppingList):
-        shop_list1 = self.get_list().copy()
-        shop_list2 = other.get_list().copy()
-        for product in shop_list2:
-            if product not in shop_list1:
-                shop_list1.append(product)
-        return ShoppingList(shop_list1)
+        def __add__(self, other: 'ShoppingList'):
+            shop_list1 = self._items
+            shop_list2 = other._items
+            new_shop_list = ShoppingList()
+            new_shop_list._items = shop_list1 + shop_list2
+            return new_shop_list
 
 
 
